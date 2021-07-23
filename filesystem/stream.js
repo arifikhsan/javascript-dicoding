@@ -6,7 +6,9 @@ const readableStream = fs.createReadStream("filesystem\\article.txt", {
 
 readableStream.on("readable", () => {
   try {
-    process.stdout.write(`[${readableStream.read()}]`);
+    // process.stdout.write(`[${readableStream.read()}]`);
+    // console.log(readableStream.read())
+    process.stdout.write(`${readableStream.read()}`);
   } catch (error) {
     console.log(error);
   }
